@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.android.recyclerview">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        tools:ignore="LockedOrientationActivity"
+        android:theme="@style/AppTheme">
+        <activity android:name=".EmptyFavorites"
+            android:screenOrientation="portrait"
+            android:parentActivityName = ".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.recyclerview.MainActivity" />
+        </activity>
+        <activity android:name=".MainActivity"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".DetailActivity"
+            android:screenOrientation="portrait"
+            android:parentActivityName = ".MainActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.recyclerview.MainActivity" />
+        </activity>
+        <activity
+            android:name=".WebviewActivity"
+            android:label="Movie Trailer"
+            android:parentActivityName=".DetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.recyclerview.DetailActivity" />
+        </activity>
+        <activity
+            android:name=".ReviewActivity"
+            android:label="Movie Review"
+            android:parentActivityName=".DetailActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.android.recyclerview.DetailActivity" />
+        </activity>
+    </application>
+
+</manifest>
